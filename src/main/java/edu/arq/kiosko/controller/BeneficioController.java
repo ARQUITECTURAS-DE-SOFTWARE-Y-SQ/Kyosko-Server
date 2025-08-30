@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/beneficio")
 public class BeneficioController {
@@ -21,7 +22,7 @@ public class BeneficioController {
         return this.serviceCitizen.getAll();
     }
 
-    @GetMapping("/citizen")
+    @GetMapping("/citizen")                                 // MYENPOINT?id=
     public ResponseEntity<Citizendto> findCitizen(@RequestParam Long id){
         Citizendto dto = new Citizendto("");
         Optional<Citizen> result = this.serviceCitizen.getById(id);

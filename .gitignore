@@ -1,10 +1,20 @@
+# --- Archivos generados automáticamente ---
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
+
+# No ignorar los targets dentro de src (necesarios para pruebas/recursos)
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
+# --- Archivos específicos de Spring Boot ---
+# Ignorar configuraciones sensibles
+src/main/resources/application.properties
+src/main/resources/application-*.properties
+src/main/resources/application.yml
+src/main/resources/application-*.yml
+
+# --- Spring Tool Suite (STS) ---
 .apt_generated
 .classpath
 .factorypath
@@ -13,21 +23,25 @@ target/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
+# --- IntelliJ IDEA ---
 .idea
 *.iws
 *.iml
 *.ipr
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
+# No ignorar los builds dentro de src (necesarios para pruebas/recursos)
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
+# --- VS Code ---
 .vscode/
+
+# --- Logs y temporales ---
+*.log
+*.tmp
+*.out
+*.bak
+
+# --- Sistema operativo ---
+.DS_Store
+Thumbs.db
