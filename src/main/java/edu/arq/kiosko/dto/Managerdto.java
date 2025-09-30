@@ -1,4 +1,8 @@
 package edu.arq.kiosko.dto;
 
-public class Managerdto {
+import edu.arq.kiosko.model.Manager;
+import edu.arq.kiosko.model.PQRResource;
+
+public class Managerdto extends Manager {
+
 }

@@ -20,8 +20,8 @@ public class Benefit {
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "onwer_id", referencedColumnName = "id")
-    private Citizen onwer;
+    @JoinColumn(name = "owner_id", referencedColumnName = "id")
+    private Citizen owner;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "state_id", referencedColumnName = "id")
@@ -36,12 +36,28 @@ public class Benefit {
     )
     private List<PQRResource> pqrs;
 
-    public Citizen getOnwer() {
-        return onwer;
+    public Citizen getOwner() {
+        return owner;
     }
 
-    public void setOnwer(Citizen onwer) {
-        this.onwer = onwer;
+    public void setOwner(Citizen owner) {
+        this.owner = owner;
+    }
+
+    public GenericStatus getState() {
+        return state;
+    }
+
+    public void setState(GenericStatus state) {
+        this.state = state;
+    }
+
+    public List<PQRResource> getPqrs() {
+        return pqrs;
+    }
+
+    public void setPqrs(List<PQRResource> pqrs) {
+        this.pqrs = pqrs;
     }
 
     public Long getId() {

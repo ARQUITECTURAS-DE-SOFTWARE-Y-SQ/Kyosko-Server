@@ -29,9 +29,13 @@ public class CitizenImpl {
     }
 
     public Citizen updateByDTO(Citizendto dto){
-        Citizen current = new Citizen();
-        current.setName(dto.getName());
-        return this.repository.save(current);
+        Optional<Citizen> existing = this.repository.findById(dto.getId());
+        if (existing.isPresent()) {
+            Citizen current = existing.get();
+            current.setName(dto.getName());
+            return this.repository.save(current);
+        }
+        return null;
     }
 
     public void deleeByDTO(Citizendto dto){

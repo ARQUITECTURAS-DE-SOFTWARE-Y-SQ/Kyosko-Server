@@ -16,8 +16,8 @@ public class GenericStatus {
     @Column(name = "description", columnDefinition = "text")
     private String description;
 
-    @Column(name = "descriminator", columnDefinition = "text")
-    private String descriminator;
+    @Column(name = "discriminator", columnDefinition = "text")
+    private String discriminator;
 
     public Long getId() {
         return id;
@@ -43,11 +43,11 @@ public class GenericStatus {
         this.description = description;
     }
 
-    public String getDescriminator() {
-        return descriminator;
+    public String getDiscriminator() {
+        return discriminator;
     }
 
-    public void setDescriminator(String descriminator) {
-        this.descriminator = descriminator;
+    public void setDiscriminator(String discriminator) {
+        this.discriminator = discriminator;
     }
 }
